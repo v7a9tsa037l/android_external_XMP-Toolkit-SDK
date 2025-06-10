@@ -14,7 +14,8 @@ license {
 }
 
 cc_library {
-    name: "md5",
+    name: "zuid_md5",
+    host_supported: true,
     cflags: [
         "-DUNIX_ENV=1",
     ],
@@ -24,6 +25,7 @@ cc_library {
 
 cc_library {
     name: "xmp_toolkit_sdk",
+    host_supported: true,
     export_include_dirs: [
         "public/include",
     ],
@@ -53,7 +55,7 @@ cc_library {
         cflags: ["-DXMP_StaticBuild=1"],
     },
     whole_static_libs: [
-        "md5",
+        "zuid_md5",
     ],
     shared_libs: [
         "libexpat",
