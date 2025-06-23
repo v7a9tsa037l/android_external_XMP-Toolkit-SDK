@@ -46,6 +46,21 @@ cc_library {
         "-Wno-user-defined-warnings",
         "--include=warning_override_overrider.h",
     ],
+
+    // TODO: XMPUtils.cpp doesn't compile cleanly with -Wformat on ILP32.
+    arch: {
+        arm: {
+            cflags: [
+                "-Wno-format",
+            ],
+        },
+        x86: {
+            cflags: [
+                "-Wno-format",
+            ],
+        },
+    },
+
     rtti: true,
     sanitize: {
         all_undefined: true,
