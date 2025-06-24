@@ -16,8 +16,6 @@ license {
 cc_library {
     name: "zuid_md5",
     host_supported: true,
-    sdk_version: "current",
-    stl: "c++_shared",
     cflags: [
         "-DUNIX_ENV=1",
     ],
@@ -28,8 +26,6 @@ cc_library {
 cc_library {
     name: "xmp_toolkit_sdk",
     host_supported: true,
-    sdk_version: "current",
-    stl: "c++_shared",
     export_include_dirs: [
         "public/include",
     ],
