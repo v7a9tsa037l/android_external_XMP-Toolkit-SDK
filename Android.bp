@@ -129,7 +129,6 @@ cc_library {
         "XMPFiles/source/PluginHandler/FileHandlerInstance.cpp",
         "XMPFiles/source/PluginHandler/HostAPIImpl.cpp",
         "XMPFiles/source/PluginHandler/Module.cpp",
-        "XMPFiles/source/PluginHandler/OS_Utils_Linux.cpp",
         "XMPFiles/source/PluginHandler/PluginManager.cpp",
         "XMPFiles/source/PluginHandler/XMPAtoms.cpp",
         "XMPFiles/source/WXMPFiles.cpp",
@@ -147,12 +146,24 @@ cc_library {
             cflags: [
                 "-DUNIX_ENV=1",
             ],
+            srcs: [
+                "XMPFiles/source/PluginHandler/OS_Utils_Linux.cpp",
+            ],
         },
         darwin: {
             cflags: [
                 "-DMAC_ENV=1",
             ],
+            srcs: [
+                "XMPFiles/source/PluginHandler/OS_Utils_Mac.cpp",
+            ],
         },
+        windows: {
+            srcs: [
+                "XMPFiles/source/PluginHandler/OS_Utils_WIN.cpp",
+            ],
+        },
+
     },
     visibility: [
         ":__subpackages__",
