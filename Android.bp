@@ -37,6 +37,7 @@ cc_library {
 
 cc_library {
     name: "xmp_toolkit_sdk",
+    vendor_available: true,
     host_supported: true,
     sdk_version: "current",
     stl: "c++_shared",
