@@ -15,6 +15,7 @@ license {
 
 cc_library {
     name: "zuid_md5",
+    vendor_available: true,
     host_supported: true,
     sdk_version: "current",
     stl: "c++_shared",
